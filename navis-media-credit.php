@@ -166,7 +166,11 @@ class Navis_Media_Credit {
             $out .= sprintf( '<p class="wp-media-credit">%s</p>', $credit );
         }
         if ( $caption ) {
-            $out .= sprintf( '<p class="wp-caption-text">%s</p>', $caption );
+            $out .= sprintf( '<p class="wp-caption-text">%s ', $caption );
+            if( $credit ){
+                $out .= sprintf( '<span class="wp-media-credit-incaption" style="display: none;">%s</span>', $credit );
+            }
+            $out .= "</p>"
         }
         $out .= "</div>";
 
